@@ -17,6 +17,6 @@ mkdir -p "$OUTPUT_DIR"
 
 BASENAME=$(basename "$INPUT_IMAGE")
 
-python3 main.py "$INPUT_IMAGE" "$OUTPUT_DIR/$BASENAME" "$CASCADE"
+python3 /mnt/data/assignment/main.py "$BASENAME" "$OUTPUT_DIR/$BASENAME" "$CASCADE"
 
 ls -lah "$OUTPUT_DIR"
