@@ -1,0 +1,27 @@
+universe = vanilla
+executable = run_job.sh
+
+arguments = $(input_image) output_images haarcascade_frontalface_default.xml
+
+transfer_input_files = \
+  run_job.sh, \
+  main.py, \
+  models/haarcascade_frontalface_default.xml, \
+  $(input_image)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+transfer_output_files = output_images
+transfer_output_remaps = \
+  "output_images=/mnt/data/assignment/output_images/$(Cluster)_$(Process)"
+
+log    = logs/condor.log
+output = logs/$(Cluster)_$(Process).out
+error  = logs/$(Cluster)_$(Process).err
+
+request_cpus   = 1
+request_memory = 1GB
+request_disk   = 512MB
+
+queue input_image from image_list.txt
