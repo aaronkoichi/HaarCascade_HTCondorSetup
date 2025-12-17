@@ -1,5 +1,5 @@
-### After Cloning rename the root repository folder to
+### To Clone:
 ```
-assignment/
+git clone <REPO_PATH> assignment
 
 ```
